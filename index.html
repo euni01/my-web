@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>셀프 디자인 작업 가이드</title>
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&family=Outfit:wght@800&display=swap" rel="stylesheet">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: #525252;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.page {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.content {
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tabs {
+  display: flex;
+  border: 1px solid #eee;
+}
+
+.tabs a {
+  flex: 1;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  color: #777;
+  font-size: 14px;
+}
+
+.tabs a.active {
+  color: #006BB9;
+  border-bottom: 3px solid #006BB9;
+}
+
+.subtabs {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 35px 0 80px;
+}
+
+.subtabs a {
+  padding: 10px 35px;
+  border-radius: 30px;
+  background: #f5f5f5;
+  color: #888;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.subtabs a.active {
+  background: #006BB9;
+  color: white;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 85px;
+}
+
+.intro h1 {
+  font-size: 28px;
+  margin-bottom: 18px;
+}
+
+.intro p {
+  font-size: 14px;
+  color: #888;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 448px minmax(0, 1fr);
+  column-gap: 50px;
+  align-items: start;
+  width: 100%;
+}
+
+.media {
+  width: 448px;
+  height: 328px;
+  border: none;
+  overflow: hidden;
+}
+
+.media img,
+.media video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.media-07 {
+  width: 448px;
+  height: 328px;
+  border: 4.5px solid #FF9900;
+  outline: none;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.media-07 img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+.step-info {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr);
+  column-gap: 15px;
+  align-items: start;
+}
+
+.number {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.description {
+  display: contents;
+}
+
+.description h2 {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 1px 0 0 0;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 700;
+  color: #525252;
+}
+
+.description p {
+  grid-column: 1 / -1;
+  font-size: 13px;
+  line-height: 1.8;
+  color: #666;
+  margin: 10px 0 0;
+}
+
+.number {
+  font-family: "Outfit", sans-serif;
+  font-size: 25px;
+  font-weight: 800;
+  color: #999;
+  grid-column: 1;
+  grid-row: 1;
+  line-height: 1;
+  align-self: center;
+}
+
+.description h2 {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 700;
+  color: #525252;
+  align-self: center;
+}
+
+.description p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #666;
+  margin: 15px 0 10px;
+}
+
+.description strong {
+  color: #006BB9;
+}
+
+.notice {
+  color: #FF5B59 !important;
+  margin-top: 18px !important;
+}
+
+.footer {
+  height: 1px;
+  background: #eee;
+  margin: 100px 0 150px;
+}
+
+@media (max-width: 800px) {
+  .content {
+    padding: 0 20px;
+  }
+
+  .step {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .media {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 448 / 328;
+  }
+
+  .steps {
+    gap: 60px;
+  }
+
+  .intro h1 {
+    font-size: 24px;
+  }
+
+  .subtabs {
+    margin-bottom: 55px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<main class="page">
+<div class="content">
+
+  <!-- 상단 메뉴 -->
+  <nav class="tabs">
+    <a href="#">상품안내</a>
+    <a href="#guide" class="active">작업 가이드</a>
+    <a href="#">이용후기</a>
+  </nav>
+
+  <!-- 서브 메뉴 -->
+  <nav class="subtabs">
+    <a href="#guide" class="active">작업 가이드</a>
+    <a href="#">셀프 등록방법</a>
+  </nav>
+
+  <!-- 타이틀 -->
+  <header class="intro" id="guide">
+    <h1>셀프 디자인 작업 가이드</h1>
+    <p>편집 기능을 이용해 나만의 디자인을 간편하게 완성해 보세요.</p>
+  </header>
+
+  <div class="steps">
+
+    <!-- 01 -->
+    <section class="step">
+      <div class="media">
+        <img src="https://i.ibb.co/bRvYz34h/01.png" alt="제작 옵션 선택">
+      </div>
+
+      <div class="step-info">
+        <span class="number">01</span>
+        <div class="description">
+          <h2>제작 옵션을 선택해 주세요.</h2>
+          <p>
+            달력의 규격, 페이지 구성, 수량과 제작 옵션을 선택해 주세요.<br>
+            선택 후 <strong>셀프 디자인 편집하기</strong>를 클릭해 주세요.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 -->
+    <section class="step">
+      <div class="media">
+        <img src="https://i.ibb.co/RpCN3gDn/02.png" alt="디자인 선택">
+      </div>
+
+      <div class="step-info">
+        <span class="number">02</span>
+        <div class="description">
+          <h2><strong>원하는 디자인을 선택</strong>해 주세요.</h2>
+          <p>
+            원하는 디자인을 선택하거나 직접 디자인할 수 있습니다.<br>
+            편집 화면에서 자유롭게 변경해 보세요.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 -->
+    <section class="step">
+      <div class="media">
+        <img src="https://i.ibb.co/qMYy9NRc/03.png" alt="달력 설정">
+      </div>
+
+      <div class="step-info">
+        <span class="number">03</span>
+        <div class="description">
+          <h2>달력의 연도와 시작 정보를 설정해 주세요.</h2>
+          <p>
+            편집기 우측 상단의 달력 설정을 클릭한 후<br>
+            연도와 시작 월, 표시할 항목을 선택한 후 ‘적용’해 주세요.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 -->
+    <section class="step">
+  <div class="media">
+    <img src="https://i.ibb.co/rKTRcwvP/04.png" alt="페이지 선택">
+  </div>
+
+      <div class="step-info">
+        <span class="number">04</span>
+        <div class="description">
+          <h2>편집할 페이지를 선택해 주세요.</h2>
+          <p>
+            하단 목록에서 편집할 페이지를 클릭해 주세요.<br>
+            목록을 좌우로 이동해 표지와 각 월의 앞면·뒷면을 확인할 수 있습니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 -->
+    <section class="step">
+      <div class="media">
+        <img src="https://i.ibb.co/Fq5m34Sc/05.png" alt="사진 변경 방법">
+      </div>
+
+      <div class="step-info">
+        <span class="number">05</span>
+        <div class="description">
+          <h2><strong>원하는 사진으로 변경</strong>해 주세요.</h2>
+          <p>
+            ① 변경할 사진 영역을 클릭해 주세요.<br>
+            ② 상단의 사진 버튼을 클릭해 사용할 사진을 불러와 주세요.<br>
+            ③ 자르기·이동 기능으로 사진의 구도를 조절해 주세요.
+          </p>
+          <p class="notice">
+            ※ 편집기 템플릿에 포함된 사진은 예시용 사진으로 실제 주문 및<br>
+            인쇄 전 사용 권한을 보유한 사진으로 교체 해주세요.<br>
+            <br>
+            * 예시 사진을 교체하지 않고 사용하여 발생하는 저작권 침해 및<br>
+            관련 분쟁에 대해서는 인터프로프린트가 책임지지 않습니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 -->
+    <section class="step">
+      <div class="media">
+        <img src="https://i.ibb.co/r2JwxNSg/06.png" alt="문구 추가 방법">
+      </div>
+
+      <div class="step-info">
+        <span class="number">06</span>
+        <div class="description">
+          <h2><strong>문구와 디자인을 꾸며</strong>주세요.</h2>
+          <p>
+            원하는 문구를 추가하고 배경, 스티커, 사진툴로<br>
+            나만의 디자인을 완성할  수 있어요.
+          </p>
+          <p class="notice">
+            ※ 추가한 요소가 날짜를 가리지 않도록 배치해 주세요.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 : GIF -->
+<section class="step">
+  <div class="media media-07">
+    <img
+      src="https://i.ibb.co/kLFKfbm/2.gif"
+      alt="전체 페이지 미리보기 안내"
+    >
+  </div>
+  <div class="step-info">
+    <span class="number">07</span>
+
+    <div class="description">
+      <h2>전체 페이지를 확인하고 편집을 마쳐 주세요.</h2>
+
+      <p>
+        상단의 미리보기에서 전체 페이지를 확인해 주세요.<br>
+        사진 배치와 문구 오탈자를 최종 확인한 후<br>
+        종료하기를 클릭해 주세요.
+      </p>
+
+      <p class="notice">
+        ※ 편집을 마친 후 수정이 필요한 경우 다시 확인해 주세요.
+      </p>
+    </div>
+  </div>
+
+</section>
+
+    <!-- 08 : GIF -->
+    <section class="step">
+      <div class="media">
+        <img src="https://i.ibb.co/VctqcKYX/08.png" alt="문구 추가 방법">
+      </div>
+
+      <div class="step-info">
+        <span class="number">08</span>
+        <div class="description">
+          <h2>제작 옵션과 견적을 확인해 주세요.</h2>
+          <p>
+            선택한 제작 옵션에 따라 견적이 자동으로 계산됩니다.<br>
+            옵션, 수량과 최종 결제금액을 확인한 후 주문하기를 클릭해 주세요.
+          </p>
+          <p class="notice">
+            ※ 주문 완료 후에는 디자인 수정이 불가합니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="footer"></div>
+
+</div>
+</main>
+
+</body>
+</html>
