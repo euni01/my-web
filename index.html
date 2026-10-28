@@ -118,7 +118,10 @@ body {
   object-fit: contain;
 }
 
-.media-07 {
+/* 02, 07, 08번 GIF 주황색 프레임 */
+.media-02,
+.media-07,
+.media-08 {
   width: 448px;
   height: 328px;
   border: 4.5px solid #FF9900;
@@ -127,12 +130,16 @@ body {
   box-sizing: border-box;
 }
 
-.media-07 img {
+/* GIF를 프레임 크기에 맞게 표시 */
+.media-02 img,
+.media-07 img,
+.media-08 img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: fill;
 }
+
 .step-info {
   display: grid;
   grid-template-columns: 30px minmax(0, 1fr);
@@ -140,15 +147,31 @@ body {
   align-items: start;
 }
 
-.step-info {
-  display: grid;
-  grid-template-columns: 30px minmax(0, 1fr);
-  column-gap: 15px;
-  align-items: start;
+.number {
+  grid-column: 1;
+  grid-row: 1;
 }
 
 .description {
   display: contents;
+}
+
+.description h2 {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 1px 0 0 0;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 700;
+  color: #525252;
+}
+
+.description p {
+  grid-column: 1 / -1;
+  font-size: 13px;
+  line-height: 1.8;
+  color: #666;
+  margin: 10px 0 0;
 }
 
 .number {
@@ -160,25 +183,6 @@ body {
   grid-row: 1;
   line-height: 1;
   align-self: center;
-}
-
-.description h2 {
-  grid-column: 2;
-  grid-row: 1;
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.5;
-  font-weight: 700;
-  color: #525252;
-  align-self: center;
-}
-
-.description p {
-  grid-column: 1 / -1;
-  font-size: 13px;
-  line-height: 1.8;
-  color: #666;
-  margin: 15px 0 10px;
 }
 
 .description h2 {
@@ -212,27 +216,6 @@ body {
   height: 1px;
   background: #eee;
   margin: 100px 0 150px;
-}
-
-.self-design-btn {
-  grid-column: 1 / -1;
-  justify-self: start;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-
-  margin-top: 12px;
-  padding: 10px 18px;
-
-  background-color: #006BB9;
-  color: #fff;
-
-  font-family: "Noto Sans KR", sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 1.4;
 }
 
 @media (max-width: 800px) {
@@ -281,7 +264,7 @@ body {
   <!-- 서브 메뉴 -->
   <nav class="subtabs">
     <a href="#guide" class="active">작업 가이드</a>
-    <a href="#">생산 유의사항</a>
+    <a href="#">셀프 등록방법</a>
   </nav>
 
   <!-- 타이틀 -->
@@ -292,46 +275,40 @@ body {
 
   <div class="steps">
 
+    <!-- 01 -->
     <section class="step">
-  <div class="media">
-    <img
-      src="https://i.ibb.co/bRvYz34h/01.png"
-      alt="제작 옵션 선택"
-    >
-  </div>
-
-  <div class="step-info">
-    <span class="number">01</span>
-
-    <div class="description">
-      <h2>제작 옵션을 선택해 주세요.</h2>
-
-      <p>
-        달력의 규격, 페이지 구성, 수량과 제작 옵션을 선택해 주세요.<br>
-        선택 후 <strong>셀프 디자인 편집하기</strong>를 클릭해 주세요.
-      </p>
-
-      <!-- 클릭 기능 없는 디자인용 버튼 -->
-      <div class="self-design-btn">
-        ↗ 셀프 디자인
+      <div class="media">
+        <img src="https://i.ibb.co/4Zzznrbm/01.png" alt="제작 옵션 선택">
       </div>
-    </div>
-  </div>
-</section>
+
+      <div class="step-info">
+        <span class="number">01</span>
+        <div class="description">
+          <h2>제작 옵션을 선택해 주세요.</h2>
+          <p>
+            달력의 규격, 페이지 구성, 수량과 제작 옵션을 선택해 주세요.<br>
+            선택 후 <strong>셀프 디자인 편집하기</strong>를 클릭해 주세요.
+          </p>
+        </div>
+      </div>
+    </section>
 
     <!-- 02 -->
     <section class="step">
-      <div class="media">
-        <img src="https://i.ibb.co/WWSnm1B6/02.png" alt="디자인 선택">
-      </div>
+  <div class="media media-02">
+    <img
+      src="https://i.ibb.co/n8Dv6XQD/image.gif"
+      alt="전체 페이지 미리보기 안내"
+    >
+  </div>
 
       <div class="step-info">
         <span class="number">02</span>
         <div class="description">
           <h2><strong>원하는 디자인을 선택</strong>해 주세요.</h2>
           <p>
-            원하는 디자인을 선택하거나 직접 디자인할 수 있습니다.<br>
-            편집 화면에서 자유롭게 변경해 보세요.
+            원하는 디자인의 상세보기에서 페이지 구성을 확인해 주세요.<br>
+            상세보기내 편집하기를 클릭하면 편집기가 열립니다.
           </p>
         </div>
       </div>
@@ -340,7 +317,7 @@ body {
     <!-- 03 -->
     <section class="step">
       <div class="media">
-        <img src="https://i.ibb.co/9mT3dqZJ/03.png" alt="달력 설정">
+        <img src="https://i.ibb.co/Q3DFCcKP/RIGHT.png" alt="달력 설정">
       </div>
 
       <div class="step-info">
@@ -441,7 +418,8 @@ body {
       </p>
 
       <p class="notice">
-        ※ 편집을 마친 후 수정이 필요한 경우 다시 확인해 주세요.
+        ※ 편집을 마친 후 수정을 희망할 경우<br>
+        디자인 재편집 버튼을 통해 디자인 편집이 가능합니다.
       </p>
     </div>
   </div>
@@ -450,21 +428,25 @@ body {
 
     <!-- 08 : GIF -->
     <section class="step">
-      <div class="media">
-        <img src="https://i.ibb.co/VctqcKYX/08.png" alt="문구 추가 방법">
-      </div>
+  <div class="media media-08">
+    <img
+      src="https://i.ibb.co/ytn34zL/4-1.gif"
+      alt="전체 페이지 미리보기 안내"
+    >
+  </div>
 
       <div class="step-info">
         <span class="number">08</span>
         <div class="description">
-          <h2>제작 옵션과 견적을 확인해 주세요.</h2>
+          <h2>최종 결제 전 장바구니에 담아 주세요.</h2>
           <p>
-            선택한 제작 옵션에 따라 견적이 자동으로 계산됩니다.<br>
-            옵션, 수량과 최종 결제금액을 확인한 후 주문하기를 클릭해 주세요.
+            상품을 장바구니에 담으면<br>
+            디자인 재편집 기능으로 디자인을 다시 수정할 수 있습니다.<br>
           </p>
           <p class="notice">
-            ※ 주문 완료 후에는 디자인 수정이 불가합니다.
-          </p>
+            ※ 주문 완료 후에는 디자인을 수정할 수 없습니다.<br>
+            ※ 장바구니에 담지 않은 상태에서 편집 페이지를 닫으면<br>
+            디자인을 다시 수정할 수 없습니다.
         </div>
       </div>
     </section>
